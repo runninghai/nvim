@@ -8,7 +8,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 require('plugin')
 
-
 local scan = require'plenary.scandir'
 
 local cores = scan.scan_dir(string.format("%s/lua/core", fn.stdpath("config")), { hidden = true, depth = 2 })

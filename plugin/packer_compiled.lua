@@ -84,11 +84,36 @@ _G.packer_plugins = {
     path = "/Users/bytedance/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
   },
+  ["dash.nvim"] = {
+    loaded = true,
+    path = "/Users/bytedance/.local/share/nvim/site/pack/packer/start/dash.nvim",
+    url = "https://github.com/mrjones2014/dash.nvim"
+  },
   ["dracula.nvim"] = {
-    config = { "\27LJ\2\n–\4\0\0\4\0\a\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0024\3\0\0=\3\6\2B\0\2\1K\0\1\0\14overrides\vcolors\1\0\4\19transparent_bg\2\21lualine_bg_color\f#44475a\23show_end_of_buffer\2\19italic_comment\2\1\0\22\afg\f#F8F8F2\19bright_magenta\f#FF92DF\15bright_red\f#FF6E6E\16bright_blue\f#D6ACFF\14selection\f#44475A\18bright_yellow\f#FFFFA5\fcomment\f#6272A4\17bright_green\f#69FF94\bred\f#FF5555\abg\f#282A36\16bright_cyan\f#A4FFFF\tpink\f#FF79C6\17bright_white\f#FFFFFF\tmenu\f#21222C\vvisual\f#3E4452\14gutter_fg\f#4B5263\fnontext\f#3B4048\tcyan\f#8BE9FD\vpurple\f#BD93F9\ngreen\f#50fa7b\vyellow\f#F1FA8C\vorange\f#FFB86C\nsetup\fdracula\frequire\0" },
     loaded = true,
     path = "/Users/bytedance/.local/share/nvim/site/pack/packer/start/dracula.nvim",
     url = "https://github.com/Mofiqul/dracula.nvim"
+  },
+  ["glow.nvim"] = {
+    config = { "\27LJ\2\n2\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\tglow\frequire\0" },
+    loaded = true,
+    path = "/Users/bytedance/.local/share/nvim/site/pack/packer/start/glow.nvim",
+    url = "https://github.com/ellisonleao/glow.nvim"
+  },
+  ["go.nvim"] = {
+    loaded = true,
+    path = "/Users/bytedance/.local/share/nvim/site/pack/packer/start/go.nvim",
+    url = "https://github.com/ray-x/go.nvim"
+  },
+  ["guihua.lua"] = {
+    loaded = true,
+    path = "/Users/bytedance/.local/share/nvim/site/pack/packer/start/guihua.lua",
+    url = "https://github.com/ray-x/guihua.lua"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/Users/bytedance/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["markdown-preview.nvim"] = {
     loaded = false,
@@ -97,20 +122,37 @@ _G.packer_plugins = {
     path = "/Users/bytedance/.local/share/nvim/site/pack/packer/opt/markdown-preview.nvim",
     url = "https://github.com/iamcco/markdown-preview.nvim"
   },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/Users/bytedance/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "/Users/bytedance/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    url = "https://github.com/rcarriga/nvim-dap-ui"
+  },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/Users/bytedance/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
+  },
   ["nvim-surround"] = {
-    config = { "\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0" },
     loaded = true,
     path = "/Users/bytedance/.local/share/nvim/site/pack/packer/start/nvim-surround",
     url = "https://github.com/kylechui/nvim-surround"
   },
   ["nvim-tree.lua"] = {
-    config = { "\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14nvim-tree\frequire\0" },
     loaded = true,
     path = "/Users/bytedance/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/nvim-tree/nvim-tree.lua"
   },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/Users/bytedance/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
   ["nvim-web-devicons"] = {
-    config = { "\27LJ\2\n®\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\roverride\1\0\2\fdefault\2\16color_icons\2\bzsh\1\0\0\1\0\4\16cterm_color\a65\ticon\bîž•\tname\bZsh\ncolor\f#428850\nsetup\22nvim-web-devicons\frequire\0" },
     loaded = true,
     path = "/Users/bytedance/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
@@ -125,8 +167,12 @@ _G.packer_plugins = {
     path = "/Users/bytedance/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/Users/bytedance/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
   ["todo-comments.nvim"] = {
-    config = { "\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18todo-comments\frequire\0" },
     loaded = true,
     path = "/Users/bytedance/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
     url = "https://github.com/folke/todo-comments.nvim"
@@ -136,10 +182,10 @@ _G.packer_plugins = {
     path = "/Users/bytedance/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
-  ["vim-go"] = {
+  ["vista.vim"] = {
     loaded = true,
-    path = "/Users/bytedance/.local/share/nvim/site/pack/packer/start/vim-go",
-    url = "https://github.com/fatih/vim-go"
+    path = "/Users/bytedance/.local/share/nvim/site/pack/packer/start/vista.vim",
+    url = "https://github.com/liuchengxu/vista.vim"
   }
 }
 
@@ -148,26 +194,10 @@ time([[Defining packer_plugins]], false)
 time([[Setup for markdown-preview.nvim]], true)
 try_loadstring("\27LJ\2\n=\0\0\2\0\4\0\0056\0\0\0009\0\1\0005\1\3\0=\1\2\0K\0\1\0\1\2\0\0\rmarkdown\19mkdp_filetypes\6g\bvim\0", "setup", "markdown-preview.nvim")
 time([[Setup for markdown-preview.nvim]], false)
--- Config for: nvim-surround
-time([[Config for nvim-surround]], true)
-try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
-time([[Config for nvim-surround]], false)
--- Config for: dracula.nvim
-time([[Config for dracula.nvim]], true)
-try_loadstring("\27LJ\2\n–\4\0\0\4\0\a\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0024\3\0\0=\3\6\2B\0\2\1K\0\1\0\14overrides\vcolors\1\0\4\19transparent_bg\2\21lualine_bg_color\f#44475a\23show_end_of_buffer\2\19italic_comment\2\1\0\22\afg\f#F8F8F2\19bright_magenta\f#FF92DF\15bright_red\f#FF6E6E\16bright_blue\f#D6ACFF\14selection\f#44475A\18bright_yellow\f#FFFFA5\fcomment\f#6272A4\17bright_green\f#69FF94\bred\f#FF5555\abg\f#282A36\16bright_cyan\f#A4FFFF\tpink\f#FF79C6\17bright_white\f#FFFFFF\tmenu\f#21222C\vvisual\f#3E4452\14gutter_fg\f#4B5263\fnontext\f#3B4048\tcyan\f#8BE9FD\vpurple\f#BD93F9\ngreen\f#50fa7b\vyellow\f#F1FA8C\vorange\f#FFB86C\nsetup\fdracula\frequire\0", "config", "dracula.nvim")
-time([[Config for dracula.nvim]], false)
--- Config for: todo-comments.nvim
-time([[Config for todo-comments.nvim]], true)
-try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
-time([[Config for todo-comments.nvim]], false)
--- Config for: nvim-web-devicons
-time([[Config for nvim-web-devicons]], true)
-try_loadstring("\27LJ\2\n®\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\roverride\1\0\2\fdefault\2\16color_icons\2\bzsh\1\0\0\1\0\4\16cterm_color\a65\ticon\bîž•\tname\bZsh\ncolor\f#428850\nsetup\22nvim-web-devicons\frequire\0", "config", "nvim-web-devicons")
-time([[Config for nvim-web-devicons]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
-time([[Config for nvim-tree.lua]], false)
+-- Config for: glow.nvim
+time([[Config for glow.nvim]], true)
+try_loadstring("\27LJ\2\n2\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\tglow\frequire\0", "config", "glow.nvim")
+time([[Config for glow.nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
