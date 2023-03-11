@@ -6,8 +6,6 @@ return require('packer').startup(function(use)
     use 'ray-x/go.nvim'
     use 'ray-x/guihua.lua' -- recommended if need floating window support
     use 'nvim-treesitter/nvim-treesitter'
-    use 'mfussenegger/nvim-dap'
-    use { 'rcarriga/nvim-dap-ui', requires = {'mfussenegger/nvim-dap'} }
     use {'liuchengxu/vista.vim'}
     use {'ellisonleao/glow.nvim', config = function() require('glow').setup() end}
     use {
@@ -25,6 +23,16 @@ return require('packer').startup(function(use)
         'hrsh7th/nvim-cmp',
         'L3MON4D3/LuaSnip',
         'saadparwaiz1/cmp_luasnip',
+        'simrat39/symbols-outline.nvim',
+    }
+    use {
+        'folke/trouble.nvim'
+    }
+
+    use {
+        'mfussenegger/nvim-dap',
+        'rcarriga/nvim-dap-ui',
+        { 'rcarriga/nvim-dap-ui', requires = {'mfussenegger/nvim-dap'} }
     }
 
 
