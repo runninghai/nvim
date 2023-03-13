@@ -7,7 +7,7 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 vim.keymap.set('n', '<leader>ld', builtin.lsp_document_symbols, {})
 vim.keymap.set('n', '<leader>li', builtin.lsp_incoming_calls, {})
-vim.keymap.set('n', '<leader>lt', builtin.lsp_document_symbols, {})
+vim.keymap.set('n', '<leader>lr', builtin.lsp_references, {})
 
 
 require('telescope').setup{
