@@ -3,7 +3,7 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     use { 'wbthomason/packer.nvim' }
     use { 'nvim-lua/plenary.nvim' }
-    use { 'ray-x/go.nvim' }
+    -- use { 'ray-x/go.nvim' }
     use { 'ray-x/guihua.lua' } -- recommended if need floating window support
     use { 'nvim-treesitter/nvim-treesitter' }
     use { 'rking/ag.vim' }
@@ -35,7 +35,8 @@ return require('packer').startup(function(use)
     use {
         'mfussenegger/nvim-dap',
         'leoluz/nvim-dap-go',
-        'rcarriga/nvim-dap-ui'
+        'rcarriga/nvim-dap-ui',
+        'theHamsta/nvim-dap-virtual-text'
     }
 
     use { 'iamcco/markdown-preview.nvim',
