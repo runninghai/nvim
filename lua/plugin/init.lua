@@ -1,9 +1,13 @@
+local fn = vim.fn
+local cmd = vim.cmd
+
 vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function(use)
+require('packer').startup(function(use)
     use { 'wbthomason/packer.nvim' }
     use { 'nvim-lua/plenary.nvim' }
     -- use { 'ray-x/go.nvim' }
+    use { "folke/neodev.nvim" }
     use { 'ray-x/guihua.lua' } -- recommended if need floating window support
     use { 'nvim-treesitter/nvim-treesitter' }
     use { 'rking/ag.vim' }
@@ -66,3 +70,12 @@ return require('packer').startup(function(use)
     })
 end
 )
+
+local scan = require'plenary.scandir'
+local plugins = scan.scan_dir(string.format("%s/lua/plugin", fn.stdpath("config")), { hidden = true, depth = 2 })
+local plugin_init = string.format("%s/lua/plugin/%s", fn.stdpath("config"), "init.lua")
+for _, file in ipairs(plugins) do
+    if file ~= plugin_init then
+        cmd("source " .. file)
+    end
+end
