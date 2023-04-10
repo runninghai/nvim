@@ -6,6 +6,7 @@ vim.cmd [[packadd packer.nvim]]
 require('packer').startup(function(use)
     use { 'wbthomason/packer.nvim' }
     use { 'nvim-lua/plenary.nvim' }
+    use { 'windwp/nvim-autopairs' }
     -- use { 'ray-x/go.nvim' }
     use { "folke/neodev.nvim" }
     use { 'ray-x/guihua.lua' } -- recommended if need floating window support
@@ -13,6 +14,7 @@ require('packer').startup(function(use)
     use { 'rking/ag.vim' }
     use { 'nvim-tree/nvim-web-devicons' }
     use { 'Mofiqul/dracula.nvim' }
+    use { 'wakatime/vim-wakatime' }
     use { 'folke/todo-comments.nvim' }
     use { 'tpope/vim-fugitive' }
     use {
@@ -21,6 +23,12 @@ require('packer').startup(function(use)
         'williamboman/mason-lspconfig.nvim',
         -- 'jose-elias-alvarez/null-ls.nvim',
     }
+
+    use {
+        'renerocksai/telekasten.nvim',
+        requires = { 'nvim-telescope/telescope.nvim' }
+    }
+    use { 'renerocksai/calendar-vim' }
 
     use {
         'hrsh7th/cmp-nvim-lsp',
@@ -34,6 +42,19 @@ require('packer').startup(function(use)
     }
     use {
         'folke/trouble.nvim'
+    }
+    -- Lua
+    use {
+        "folke/which-key.nvim",
+        config = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+            require("which-key").setup {
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
     }
 
     use {
@@ -71,7 +92,7 @@ require('packer').startup(function(use)
 end
 )
 
-local scan = require'plenary.scandir'
+local scan = require 'plenary.scandir'
 local plugins = scan.scan_dir(string.format("%s/lua/plugin", fn.stdpath("config")), { hidden = true, depth = 2 })
 local plugin_init = string.format("%s/lua/plugin/%s", fn.stdpath("config"), "init.lua")
 for _, file in ipairs(plugins) do
