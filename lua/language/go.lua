@@ -35,3 +35,44 @@ require('lspconfig')['gopls'].setup {
 
     flags = lsp_flags,
 }
+
+-- snips --
+
+local ls = require('luasnip')
+
+local snip = ls.snippet
+local func = ls.function_node
+local text = ls.text_node
+local fmt = require("luasnip.extras.fmt").fmt
+local insert = ls.insert_node
+
+local date = function() return { os.date('%Y-%m-%d %H:%M:%S') } end
+
+ls.add_snippets(nil, {
+    go = {
+        snip({
+                trig = "func",
+                namr = "func",
+                dscr = "function",
+            },
+            {
+                text { 'func ' }, insert(1, "Name"), text { '() {', '' }, text { '}' }
+            }),
+        snip({
+                trig = "struct",
+                namr = "struct",
+                dscr = "struct",
+            },
+            {
+                text { 'type ' }, insert(1, "Name"), text { ' struct {', '' }, text { '}' }
+            }),
+        snip({
+                trig = "interface",
+                namr = "interface",
+                dscr = "interface",
+            },
+            {
+                text { 'type ' }, insert(1, "Name"), text { ' interface {', '' }, text { '}' }
+            }),
+    }
+})
