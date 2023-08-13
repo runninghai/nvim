@@ -7,7 +7,6 @@ require('packer').startup(function(use)
     use { 'wbthomason/packer.nvim' }
     use { 'nvim-lua/plenary.nvim' }
     use { 'windwp/nvim-autopairs' }
-    -- use { 'ray-x/go.nvim' }
     use { "folke/neodev.nvim" }
     use { 'ray-x/guihua.lua' } -- recommended if need floating window support
     use { 'nvim-treesitter/nvim-treesitter' }
@@ -17,11 +16,12 @@ require('packer').startup(function(use)
     use { 'wakatime/vim-wakatime' }
     use { 'folke/todo-comments.nvim' }
     use { 'tpope/vim-fugitive' }
+
+
     use {
         'neovim/nvim-lspconfig',
         'williamboman/mason.nvim',
         'williamboman/mason-lspconfig.nvim',
-        -- 'jose-elias-alvarez/null-ls.nvim',
     }
 
     use {
@@ -86,9 +86,14 @@ require('packer').startup(function(use)
     })
     use({
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.1',
+        tag = '0.1.2',
         requires = { { 'nvim-lua/plenary.nvim' } }
     })
+
+    use {
+        'nvim-lua/popup.nvim',
+        'nvim-telescope/telescope-media-files.nvim',
+    }
 end
 )
 

@@ -93,17 +93,16 @@ ls.add_snippets(nil, {
             },
             fmt(
                 [[
-                  # {} - {}
+                  # {}
                   ## task
                   {}
                   ## content
                 ]],
                 {
-                    insert(1, "started_at"),
-                    insert(2, "ended_at"),
-                    insert(3, "task"),
+                    func(date, {}),
+                    insert(1, "task"),
                 }
             )
-        )
+        ),
     }
 })
