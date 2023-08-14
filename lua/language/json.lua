@@ -17,7 +17,7 @@ ls.add_snippets(nil, {
                 text { "{", "    \"Name\": " }, insert(1, "\"task name\""), text(","),
                 text { "", "    \"BoundaryName\": " }, insert(2, "\"task boundary name\""), text(","),
                 text { "", "    \"Description\": " }, insert(3, "\"task description\""), text(","),
-                text { "", "    \"TimeBudget\": " }, insert(3, "\"30min\""), text(","),
+                text { "", "    \"TimeBudget\": " }, insert(3, "\"30m\""), text(","),
                 text { "", "    \"Childs\": [", "    ]" },
                 text { "", "}" }
             }
