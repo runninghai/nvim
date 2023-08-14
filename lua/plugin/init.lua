@@ -3,10 +3,10 @@ local cmd = vim.cmd
 
 
 require('lazy').setup({
-    "nvim-lua/plenary.nvim",
+    'nvim-lua/plenary.nvim',
     {
         'windwp/nvim-autopairs',
-        event = "InsertEnter",
+        event = 'InsertEnter',
     },
     {
         'folke/neodev.nvim',
@@ -61,7 +61,7 @@ require('lazy').setup({
     {
         'L3MON4D3/LuaSnip',
         -- follow latest release.
-        version = "2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        version = '2.*', -- Replace <CurrentMajor> by the latest released major (first number of latest release)
         -- install jsregexp (optional!).
         build = 'make install_jsregexp'
     },
@@ -124,33 +124,47 @@ require('lazy').setup({
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.2',
-        requires = { { 'nvim-lua/plenary.nvim' } }
+        dependencies = { { 'nvim-lua/plenary.nvim' } }
     },
 
     'nvim-lua/popup.nvim',
     'nvim-telescope/telescope-media-files.nvim',
 
     {
-      "folke/flash.nvim",
-      event = "VeryLazy",
+      'folke/flash.nvim',
+      event = 'VeryLazy',
       opts = {},
       version = '1.17.3',
       keys = {
-        { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-        { "S", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-        { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-        { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-        { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+        { 's', mode = { 'n', 'x', 'o' }, function() require('flash').jump() end, desc = 'Flash' },
+        { 'S', mode = { 'n', 'o', 'x' }, function() require('flash').treesitter() end, desc = 'Flash Treesitter' },
+        { 'r', mode = 'o', function() require('flash').remote() end, desc = 'Remote Flash' },
+        { 'R', mode = { 'o', 'x' }, function() require('flash').treesitter_search() end, desc = 'Treesitter Search' },
+        { '<c-s>', mode = { 'c' }, function() require('flash').toggle() end, desc = 'Toggle Flash Search' },
       },
+    },
+    { 
+      'lukas-reineke/indent-blankline.nvim',
+      version = 'v2.20.7'
+    },
+
+    {
+        'kevinhwang91/promise-async',
+        version = 'v1.0.0'
+    },
+    {
+        'kevinhwang91/nvim-ufo',
+        dependencies = {'kevinhwang91/promise-async'},
+        version = 'v1.3.0'
     }
 }
 )
 
 local scan = require 'plenary.scandir'
-local plugins = scan.scan_dir(string.format("%s/lua/plugin", fn.stdpath("config")), { hidden = true, depth = 2 })
-local plugin_init = string.format("%s/lua/plugin/%s", fn.stdpath("config"), "init.lua")
+local plugins = scan.scan_dir(string.format('%s/lua/plugin', fn.stdpath('config')), { hidden = true, depth = 2 })
+local plugin_init = string.format('%s/lua/plugin/%s', fn.stdpath('config'), 'init.lua')
 for _, file in ipairs(plugins) do
     if file ~= plugin_init then
-        cmd("source " .. file)
+        cmd('source ' .. file)
     end
 end
