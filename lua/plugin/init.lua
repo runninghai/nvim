@@ -1,100 +1,135 @@
 local fn = vim.fn
 local cmd = vim.cmd
 
-vim.cmd [[packadd packer.nvim]]
 
-require('packer').startup(function(use)
-    use { 'wbthomason/packer.nvim' }
-    use { 'nvim-lua/plenary.nvim' }
-    use { 'windwp/nvim-autopairs' }
-    use { "folke/neodev.nvim" }
-    use { 'ray-x/guihua.lua' } -- recommended if need floating window support
-    use { 'nvim-treesitter/nvim-treesitter' }
-    use { 'rking/ag.vim' }
-    use { 'nvim-tree/nvim-web-devicons' }
-    use { 'Mofiqul/dracula.nvim' }
-    use { 'wakatime/vim-wakatime' }
-    use { 'folke/todo-comments.nvim' }
-    use { 'tpope/vim-fugitive' }
+require('lazy').setup({
+    "nvim-lua/plenary.nvim",
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+    },
+    {
+        'folke/neodev.nvim',
+        version = 'v2.5.2'
+    },
+
+    {
+        'ray-x/guihua.lua',
+        build = 'cd lua/fzy && make'
+    },
+    {
+        'nvim-treesitter/nvim-treesitter',
+        version = 'v0.9.1'
+    },
+    'rking/ag.vim',
+    {
+        'nvim-tree/nvim-web-devicons',
+        version = 'nerd-v2-compat'
+    },
+    'Mofiqul/dracula.nvim',
+    'wakatime/vim-wakatime',
+    {
+        'folke/todo-comments.nvim',
+        dependencies = { 'nvim-lua/plenary.nvim' },
+        version = 'v1.1.0'
+    },
+    'tpope/vim-fugitive',
 
 
-    use {
-        'neovim/nvim-lspconfig',
+    'neovim/nvim-lspconfig',
+    {
         'williamboman/mason.nvim',
+        version = 'v1.6.2',
+    },
+    {
         'williamboman/mason-lspconfig.nvim',
-    }
+        version = 'v1.12.0'
+    },
 
-    use {
+    {
         'renerocksai/telekasten.nvim',
-        requires = { 'nvim-telescope/telescope.nvim' }
-    }
-    use { 'renerocksai/calendar-vim' }
+        dependencies = { 'nvim-telescope/telescope.nvim' }
+    },
+    'renerocksai/calendar-vim',
 
-    use {
-        'hrsh7th/cmp-nvim-lsp',
-        'hrsh7th/cmp-buffer',
-        'hrsh7th/cmp-path',
-        'hrsh7th/cmp-cmdline',
-        'hrsh7th/nvim-cmp',
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-cmdline',
+    'hrsh7th/nvim-cmp',
+
+    {
         'L3MON4D3/LuaSnip',
-        'saadparwaiz1/cmp_luasnip',
-        'simrat39/symbols-outline.nvim',
-    }
-    use {
-        'folke/trouble.nvim'
-    }
-    -- Lua
-    use {
-        "folke/which-key.nvim",
-        config = function()
+        -- follow latest release.
+        version = "2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        -- install jsregexp (optional!).
+        build = 'make install_jsregexp'
+    },
+    'saadparwaiz1/cmp_luasnip',
+
+    'simrat39/symbols-outline.nvim',
+
+
+    {
+        'folke/trouble.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+    },
+
+    {
+        'folke/which-key.nvim',
+        event = 'VeryLazy',
+        init = function()
             vim.o.timeout = true
             vim.o.timeoutlen = 300
-            require("which-key").setup {
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                -- refer to the configuration section below
-            }
-        end
-    }
+        end,
+        version = 'v1.5.1'
+    },
 
-    use {
+    {
         'mfussenegger/nvim-dap',
-        'leoluz/nvim-dap-go',
+        version = '0.6.0'
+    },
+    {
         'rcarriga/nvim-dap-ui',
-        'theHamsta/nvim-dap-virtual-text'
-    }
+        version = 'v3.8.4'
+    },
+    'theHamsta/nvim-dap-virtual-text',
+    'leoluz/nvim-dap-go',
 
-    use { 'iamcco/markdown-preview.nvim',
-        run = 'cd app && npm install',
-        setup = function() vim.g.mkdp_filetypes = { 'markdown' } end,
+    {
+        'iamcco/markdown-preview.nvim',
+        build = 'cd app && npm install',
+        init = function() vim.g.mkdp_filetypes = { 'markdown' } end,
         ft = { 'markdown' }
-    }
-    use {
+    },
+
+    {
         'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-    }
-    use {
+        dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
+    },
+
+    {
         'nvim-tree/nvim-tree.lua',
-        requires = {
-            'nvim-tree/nvim-web-devicons', -- optional, for file icons
+        dependencies = {
+            'nvim-tree/nvim-web-devicons',
         },
-        tag = 'nightly'                    -- optional, updated every week. (see issue #1193)
-    }
-    use({
+        version = 'nightly'
+    },
+
+    {
         'kylechui/nvim-surround',
-        tag = '*', -- Use for stability; omit to use `main` branch for the latest features
-    })
-    use({
+        tag = 'v2.1.1',
+    },
+
+    {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.2',
         requires = { { 'nvim-lua/plenary.nvim' } }
-    })
+    },
 
-    use {
-        'nvim-lua/popup.nvim',
-        'nvim-telescope/telescope-media-files.nvim',
-    }
-end
+    'nvim-lua/popup.nvim',
+    'nvim-telescope/telescope-media-files.nvim',
+}
 )
 
 local scan = require 'plenary.scandir'
