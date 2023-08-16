@@ -57,7 +57,7 @@ ls.add_snippets(nil, {
             },
             {
                 text { 'func ' }, insert(1, "Name"), text { '() {', '' }, text { '}' }
-            }),
+        }),
         snip({
                 trig = "struct",
                 namr = "struct",
@@ -65,7 +65,7 @@ ls.add_snippets(nil, {
             },
             {
                 text { 'type ' }, insert(1, "Name"), text { ' struct {', '' }, text { '}' }
-            }),
+        }),
         snip({
                 trig = "interface",
                 namr = "interface",
@@ -73,6 +73,51 @@ ls.add_snippets(nil, {
             },
             {
                 text { 'type ' }, insert(1, "Name"), text { ' interface {', '' }, text { '}' }
-            }),
+        }),
+        snip({
+                trig = "galoistest",
+                namr = "galoistest",
+                dscr = "galoistest",
+            },
+            fmt(
+                [[
+                import (
+                    "context"
+                    "testing"
+
+                    "github.com/golang/mock/gomock"
+                    "github.com/onsi/gomega"
+                )
+
+                func Test<>(t *testing.T) {
+                    mockCtrl := gomock.NewController(t)
+                    mockRepo := repomock.NewMockCompletedInstanceRepository(mockCtrl)
+
+                    testCases := []struct {
+                        name       string
+                    }{
+                    }
+                    for _, tt := range testCases {
+                        t.Run(tt.name, func(t *testing.T) {
+                            if tt.mockFunc != nil {
+                                tt.mockFunc()
+                            }
+                            if err := <>(context.Background(), tt.msg); (err != nil) != tt.wantErr {
+                                t.Errorf("<>() error = %v, wantErr %v", err, tt.wantErr)
+                            }
+                        })
+                    }
+                }
+                ]],
+                {
+                    insert(2, "behave"),
+                    insert(1, "func"),
+                    insert(0, "func"),
+                },
+                {
+                    delimiters = "<>",
+                }
+            )
+        ),
     }
 })

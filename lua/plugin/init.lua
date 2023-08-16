@@ -93,7 +93,9 @@ require('lazy').setup({
         version = 'v3.8.4'
     },
     'theHamsta/nvim-dap-virtual-text',
-    'leoluz/nvim-dap-go',
+    {
+        'ray-x/go.nvim',
+    },
 
     {
         'iamcco/markdown-preview.nvim',
@@ -144,7 +146,8 @@ require('lazy').setup({
     },
     { 
       'lukas-reineke/indent-blankline.nvim',
-      version = 'v2.20.7'
+      version = 'v2.20.7',
+      event = 'VeryLazy',
     },
 
     {
@@ -155,6 +158,11 @@ require('lazy').setup({
         'kevinhwang91/nvim-ufo',
         dependencies = {'kevinhwang91/promise-async'},
         version = 'v1.3.0'
+    },
+    {
+      'glepnir/dashboard-nvim',
+      event = 'VimEnter',
+      dependencies = { {'nvim-tree/nvim-web-devicons'}}
     }
 }
 )
