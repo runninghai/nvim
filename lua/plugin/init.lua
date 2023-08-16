@@ -117,12 +117,12 @@ require('lazy').setup({
 
     {
         'kylechui/nvim-surround',
-        tag = 'v2.1.1',
+        version = 'v2.1.1',
     },
 
     {
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.2',
+        version = '0.1.2',
         dependencies = { { 'nvim-lua/plenary.nvim' } }
     },
 
