@@ -34,6 +34,10 @@ require('lazy').setup({
         version = 'v1.1.0'
     },
     'tpope/vim-fugitive',
+    {
+        'lewis6991/gitsigns.nvim',
+        version = 'v0.6'
+    },
 
     'neovim/nvim-lspconfig',
     {
